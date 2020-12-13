@@ -11,7 +11,6 @@
 .messageSender__top {
   display: flex;
   border-bottom: 1px solid #eff2f5;
-  padding-bottom: 15px;
   padding: 10px;
 }
 
@@ -31,4 +30,32 @@
 
 .messageSender__top > form > button {
   display: none;
+}
+
+.messageSender__input {
+  flex: 1;
+}
+
+.messageSender__bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.messageSender__option {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  color: gray;
+  margin: 5px;
+}
+
+.messageSender__option > h3 {
+  font-size: medium;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.messageSender__option:hover {
+  background-color: #eff2f5;
+  border-radius: 20px;
 }

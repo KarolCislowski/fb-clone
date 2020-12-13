@@ -1,4 +1,7 @@
+import { useState } from 'react'
+
 import './MessageSender.css'
+
 import { Avatar } from '@material-ui/core'
 
 import VideocamIcon from '@material-ui/icons/Videocam'
@@ -6,6 +9,10 @@ import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
 import InsertEmotionIcon from '@material-ui/icons/InsertEmoticon'
 
 export const MessageSender = () => {
+
+  const [input, setInput] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -16,10 +23,16 @@ export const MessageSender = () => {
         <Avatar />
         <form>
           <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
             className='messageSender__input'
             placeholder={`What's on your mind`}
           />
-          <input placeholder='image URL (Optional)' />
+          <input
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+            placeholder='image URL (Optional)'
+          />
 
           <button
             onClick={handleSubmit}
