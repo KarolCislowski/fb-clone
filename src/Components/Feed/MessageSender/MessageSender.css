@@ -42,20 +42,22 @@
 }
 
 .messageSender__option {
-  padding: 20px;
+  padding: 10px;
   display: flex;
+  justify-content: center;
   align-items: center;
   color: gray;
   margin: 5px;
+  flex: 1;
 }
 
 .messageSender__option > h3 {
-  font-size: medium;
+  font-size: small;
   margin-left: 10px;
   cursor: pointer;
 }
 
 .messageSender__option:hover {
   background-color: #eff2f5;
-  border-radius: 20px;
+  border-radius: 15px;
 }

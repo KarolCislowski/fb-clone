@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  padding: 15px 20px;
+  padding: 5px 20px;
   justify-content: space-between;
   position: sticky;
   background-color: #fff;
@@ -24,7 +24,7 @@
   background-color: #eff2f5;
   padding: 10px;
   margin-left: 10px;
-  border-radius: 33px;
+  border-radius: 50px;
 }
 
 .header__input > input {
