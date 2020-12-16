@@ -4,16 +4,17 @@ import { Header } from './Components/Header/Header'
 import { Sidebar } from './Components/Sidebar/Sidebar'
 import { Feed } from './Components/Feed/Feed'
 import { RightBar } from './Components/RightBar/RightBar'
+import { Login } from './Components/Login/Login'
 
 function App() {
-  const user = 'Krasnal'
+  const user = null
 
   return (
     <div className="app">
       {!user ? (
-        <h1>LOGIN</h1>
+        <Login />
       ) : (
-          <>
+          <Login>
             <Header />
 
             <div className='app__body'>
@@ -21,7 +22,7 @@ function App() {
               <Feed />
               <RightBar />
             </div>
-          </>
+          </Login>
         )}
 
     </div>
