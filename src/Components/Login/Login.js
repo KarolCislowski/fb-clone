@@ -1,9 +1,16 @@
 import './Login.css'
+
 import { Button } from '@material-ui/core'
+import { auth, provider } from '../../firebase'
 
 export const Login = () => {
   const signIn = (e) => {
-    e.preventDefault()
+    auth
+      .signInWithPopup(provider)
+      .then(result => {
+        console.log(result)
+      })
+      .catch(err => alert(err.message))
   }
 
   return (
