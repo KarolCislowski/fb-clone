@@ -1,14 +1,22 @@
+/* eslint-disable no-unused-vars */
 import './Login.css'
 
 import { Button } from '@material-ui/core'
 import { auth, provider } from '../../firebase'
+import { actionTypes } from '../../reducer/reducer'
+import { useStateValue } from '../../StateProvider'
 
 export const Login = () => {
+  const [state, dispatch] = useStateValue()
+
   const signIn = (e) => {
     auth
       .signInWithPopup(provider)
       .then(result => {
-        console.log(result)
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        })
       })
       .catch(err => alert(err.message))
   }
