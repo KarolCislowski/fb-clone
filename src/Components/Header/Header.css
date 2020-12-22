@@ -33,6 +33,12 @@
   outline-width: 0;
 }
 
+@media (max-width: 1150px) {
+  .header__input > input {
+    display: none;
+  }
+}
+
 .header__center {
   display: flex;
   flex: 1;
@@ -44,6 +50,7 @@
   align-items: center;
   padding: 0 30px;
   cursor: pointer;
+  font-size: large;
 }
 
 .header__option:hover {
@@ -82,4 +89,19 @@
 
 .header__info > h4 {
   margin-left: 10px;
+}
+
+@media (max-width: 1100px) {
+  .header__info > h4 {
+    display: none;
+  }
+  .header__option {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 900px) {
+  .header__option {
+    display: none;
+  }
 }

@@ -1,8 +1,14 @@
 .feed {
   flex: 1;
-  padding: 30px 150px;
+  padding: 30px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1150px) {
+  .feed {
+    padding: 30px;
+  }
 }
