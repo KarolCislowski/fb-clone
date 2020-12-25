@@ -26,7 +26,9 @@ export const MessageSender = () => {
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       profilePic: user.photoURL,
       username: user.displayName,
-      image: imageUrl
+      image: imageUrl,
+      likes: [],
+      comments: []
     })
   }
   return (

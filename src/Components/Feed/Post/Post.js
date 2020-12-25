@@ -27,9 +27,11 @@ export const Post = ({ profilePic, image, username, timestamp, message }) => {
         <p>{message}</p>
       </div>
 
-      <div className='post__image'>
-        <img src={image} alt='post cover' />
-      </div>
+      {image &&
+        <div className='post__image'>
+          <img src={image} alt='post cover' />
+        </div>
+      }
 
       <div className='post__options'>
         <div className='post__option'>
