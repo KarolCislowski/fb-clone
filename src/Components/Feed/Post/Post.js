@@ -54,9 +54,9 @@ export const Post = ({ id, profilePic, image, username, timestamp, message, like
       }
 
       <div className='post__options'>
-        <div className='post__option' onClick={handleLike}>
+        <div className={(likes.indexOf(user.uid) === -1) ? 'post__option' : 'post__option post__option--liked'} onClick={handleLike}>
           <ThumbUpIcon />
-          <p>like {likes && likes.length}</p>
+          <p>like {(likes && likes.length > 0) && likes.length}</p>
         </div>
         <div className='post__option'>
           <ChatBubbleOutlineIcon />
