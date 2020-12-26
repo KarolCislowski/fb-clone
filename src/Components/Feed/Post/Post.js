@@ -71,7 +71,6 @@ export const Post = ({ id, profilePic, image, username, timestamp, message, like
           <ExpandMoreOutlined />
         </div>
       </div>
-
     </div>
   )
 }
