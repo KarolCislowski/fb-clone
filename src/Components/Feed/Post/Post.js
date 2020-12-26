@@ -8,7 +8,27 @@ import NearMeIcon from '@material-ui/icons/NearMe'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import { ExpandMoreOutlined } from '@material-ui/icons'
 
-export const Post = ({ profilePic, image, username, timestamp, message }) => {
+
+import db from '../../../firebase'
+import { useStateValue } from '../../../StateProvider'
+
+export const Post = ({ id, profilePic, image, username, timestamp, message, likes }) => {
+  const [{ user }, dispatch] = useStateValue()
+
+  const handleLike = (e) => {
+    const index = likes.indexOf(user.uid)
+    if (index >= 0) {
+      likes = likes.slice(index, index - 1)
+      db.collection('posts').doc(id).update({
+        likes
+      })
+    } else {
+      db.collection('posts').doc(id).update({
+        likes: [...likes, user.uid]
+      })
+    }
+  }
+
   return (
     <div className='post'>
       <div className='post__top'>
@@ -34,9 +54,9 @@ export const Post = ({ profilePic, image, username, timestamp, message }) => {
       }
 
       <div className='post__options'>
-        <div className='post__option'>
+        <div className='post__option' onClick={handleLike}>
           <ThumbUpIcon />
-          <p>like</p>
+          <p>like {likes && likes.length}</p>
         </div>
         <div className='post__option'>
           <ChatBubbleOutlineIcon />
