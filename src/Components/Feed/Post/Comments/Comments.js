@@ -1,7 +1,6 @@
 import { Avatar } from '@material-ui/core'
 import { useState } from 'react'
 import db from '../../../../firebase'
-import firebase from 'firebase'
 import { useStateValue } from '../../../../StateProvider'
 import './Comments.css'
 
@@ -20,6 +19,7 @@ export const Comments = ({ postId, comments }) => {
         username: user.displayName
       }]
     })
+    setComment('')
   }
   return (
     <div className='comments'>
