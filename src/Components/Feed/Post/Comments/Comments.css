@@ -1,0 +1,27 @@
+.commentsSender {
+  display: flex;
+  border-bottom: 1px solid #eff2f5;
+  padding: 10px;
+}
+
+.commentsSender > form {
+  flex: 1;
+  display: flex;
+}
+
+.commentsSender > form > input {
+  outline-width: 0;
+  border: none;
+  padding: 5px 20px;
+  margin: 0 10px;
+  border-radius: 999px;
+  background-color: #eff2f5;
+}
+
+.commentsSender > form > button {
+  display: none;
+}
+
+.commentsSender__input {
+  flex: 1;
+}

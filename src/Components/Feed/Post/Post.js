@@ -11,8 +11,9 @@ import { ExpandMoreOutlined } from '@material-ui/icons'
 
 import db from '../../../firebase'
 import { useStateValue } from '../../../StateProvider'
+import { Comments } from './Comments/Comments'
 
-export const Post = ({ id, profilePic, image, username, timestamp, message, likes }) => {
+export const Post = ({ id, profilePic, image, username, timestamp, message, likes, comments }) => {
   const [{ user }, dispatch] = useStateValue()
 
   const handleLike = (e) => {
@@ -71,6 +72,7 @@ export const Post = ({ id, profilePic, image, username, timestamp, message, like
           <ExpandMoreOutlined />
         </div>
       </div>
+      <Comments postId={id} comments={comments} />
     </div>
   )
 }
