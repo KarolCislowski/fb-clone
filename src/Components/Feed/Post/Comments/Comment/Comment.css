@@ -1,0 +1,16 @@
+.comment {
+  display: flex;
+  margin: 10px 40px 10px 20px;
+}
+
+.comment__content {
+  flex: 1;
+  background-color: #eff2f5;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.comment__content > h4 {
+  color: #616060;
+}

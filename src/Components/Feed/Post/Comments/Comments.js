@@ -2,6 +2,7 @@ import { Avatar } from '@material-ui/core'
 import { useState } from 'react'
 import db from '../../../../firebase'
 import { useStateValue } from '../../../../StateProvider'
+import { Comment } from './Comment/Comment'
 import './Comments.css'
 
 export const Comments = ({ postId, comments }) => {
@@ -25,7 +26,11 @@ export const Comments = ({ postId, comments }) => {
     <div className='comments'>
       {comments && comments.map(e =>
       (
-        <p>{e.comment}</p>
+        <Comment
+          profilePic={e.profilePic}
+          username={e.username}
+          comment={e.comment}
+        />
       ))}
       <div className='commentsSender'>
         <Avatar src={user.photoURL} />

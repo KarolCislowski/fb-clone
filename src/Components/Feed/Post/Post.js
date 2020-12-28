@@ -1,4 +1,5 @@
 import './Post.css'
+import { useState } from 'react'
 
 import { Avatar } from '@material-ui/core'
 
@@ -15,6 +16,8 @@ import { Comments } from './Comments/Comments'
 
 export const Post = ({ id, profilePic, image, username, timestamp, message, likes, comments }) => {
   const [{ user }, dispatch] = useStateValue()
+
+  const [showComments, setShowComments] = useState(false)
 
   const handleLike = (e) => {
     const index = likes.indexOf(user.uid)
@@ -39,7 +42,6 @@ export const Post = ({ id, profilePic, image, username, timestamp, message, like
         />
         <div className='post__topInfo'>
           <h3>{username}</h3>
-          {/* <p>{new Date(timestamp?.toDate()).toUTCString()}</p> */}
           <p>{new Date(timestamp?.toDate()).toUTCString()}</p>
         </div>
       </div>
@@ -59,7 +61,10 @@ export const Post = ({ id, profilePic, image, username, timestamp, message, like
           <ThumbUpIcon />
           <p>like {(likes && likes.length > 0) && likes.length}</p>
         </div>
-        <div className='post__option'>
+        <div
+          className='post__option'
+          onClick={() => setShowComments(!showComments)}
+        >
           <ChatBubbleOutlineIcon />
           <p>Comment</p>
         </div>
@@ -72,7 +77,7 @@ export const Post = ({ id, profilePic, image, username, timestamp, message, like
           <ExpandMoreOutlined />
         </div>
       </div>
-      <Comments postId={id} comments={comments} />
+      {showComments && <Comments postId={id} comments={comments} />}
     </div>
   )
 }
