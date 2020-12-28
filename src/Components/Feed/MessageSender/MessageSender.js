@@ -30,6 +30,8 @@ export const MessageSender = () => {
       likes: [],
       comments: []
     })
+    setInput('')
+    setImageUrl('')
   }
   return (
     <div className='messageSender'>
