@@ -55,11 +55,24 @@ export const Post = ({ id, profilePic, image, username, timestamp, message, like
           <img src={image} alt='post cover' />
         </div>
       }
-
+      <div className='post__stats'>
+        <p>
+          {(likes && likes.length > 0) &&
+            <>
+              <ThumbUpIcon fontSize='small' /> {likes.length}
+            </>}
+        </p>
+        <p
+          className='post__stats__comments'
+          onClick={() => setShowComments(!showComments)}
+        >
+          {(comments && comments.length > 0) && `Comments: ${comments.length}`}
+        </p>
+      </div>
       <div className='post__options'>
         <div className={(likes.indexOf(user.uid) === -1) ? 'post__option' : 'post__option post__option--liked'} onClick={handleLike}>
           <ThumbUpIcon />
-          <p>like {(likes && likes.length > 0) && likes.length}</p>
+          <p>like</p>
         </div>
         <div
           className='post__option'

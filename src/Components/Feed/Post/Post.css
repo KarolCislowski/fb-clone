@@ -36,6 +36,21 @@
   width: 100%;
 }
 
+.post__stats {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+}
+
+.post__stats__comments {
+  cursor: pointer;
+}
+
+.post__stats__comments:hover {
+  text-decoration: underline;
+}
+
 .post__options {
   padding-top: 10px;
   border-top: 1px solid lightgray;
